@@ -39,7 +39,7 @@ public class MiServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LogicaNegocio n = new LogicaNegocio();	
-		int precio = n.calculaDescuento(request.getParameter("nombre"),request.getParameter("edad"));
+		double precio = n.calculaDescuento(request.getParameter("nombre"),request.getParameter("edad"));
 		request.setAttribute("precio", precio);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/vista.jsp");
